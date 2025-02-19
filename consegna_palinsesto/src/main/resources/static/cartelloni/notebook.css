@@ -1,0 +1,157 @@
+body{
+    position: absolute;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.box_a{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.box_b{
+    margin: 0;
+    position: relative;
+    height: 13%;
+    text-align: center;
+    border-bottom: 5px solid #004589;
+}
+
+.box_b img{
+    margin-top: 30px;
+}
+
+.box_c{
+    position: relative;
+    text-align: center;
+    background-color: #004589;
+}
+
+.box_d{
+    position: relative;
+    height: 53%;
+}
+
+.box_e{
+    position: relative;
+    float: left;
+    width: 25%;
+    height: 95%;
+    margin-left: 10%;
+    margin-top: 1%;
+    text-align: center;
+    animation: floating ease 5s infinite;
+}
+.box_e img{
+    margin-top: 15px;
+    width: 400px;
+}
+
+.box_f{
+    position: relative;
+    float: left;
+    width: 25%;
+    height: 95%;
+    margin-left: 2.5%;
+    margin-top: 1%;
+    text-align: center;
+    animation: floating ease 5s infinite;
+}
+.box_f img{
+    margin-top: 25px;
+    width: 400px;
+}
+
+.box_g{
+    position: relative;
+    float: right;
+    width: 25%;
+    height: 95%;
+    margin-right: 10%;
+    margin-top: 1%;
+    text-align: center;
+    animation: floating ease 5s infinite;
+}
+.box_g img{
+    margin-top: 10px;
+    width: 400px;
+}
+
+.box_h{
+    position: relative;
+    width: 100%;
+    background-color: #004589;
+}
+
+.box_j{
+    margin: 0;
+    height: 14.9%;
+    background-color: #FEC100;
+    text-align: center;
+
+}
+
+.st1{
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+    color: #FEC100;
+    text-shadow: 3px 3px #B88C00;
+}
+
+.st2{
+    margin: 10px 0 0 0;
+    font-family: Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: #004589;
+}
+
+.st3{
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    letter-spacing: 1px;
+    color: #FEC100;
+    text-shadow: 2px 2px #B88C00;
+}
+
+.st4{
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+    font-size: 80px;
+    color: #004589;
+    animation: flash 5s linear infinite;
+}
+
+.st5{
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+    font-size: 25px;
+    color: #004589;
+}
+
+@keyframes floating{
+    0%{
+        transform: translate(0%, 0%);
+    }
+    50%{
+        transform: translate(0%, 5%);
+    }
+    100%{
+        transform: translate(0%, 0%);
+    }
+}
+
+@keyframes flash{
+    0%, 20%, 40%, 60%, 80%, 100%{
+        color: #FEC100;
+    }
+    10%, 30%, 50%, 70%, 90%{
+        color: #004589;
+    }
+}

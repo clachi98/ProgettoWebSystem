@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Se volessimo validare il file XML con il file DTD esterno -->
+<!-- <!DOCTYPE palinsesto SYSTEM "palinsesto.dtd"> -->
+<!-- Non dovremmo inserire la parte "xmlns" nel tag "palinsesto" -->
+
+<palinsesto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="palinsesto.xsd">
+  <cartellone>
+    <fileHTML>Vespa.html</fileHTML>
+    <durata>10</durata> <!-- Durata in secondi -->
+  </cartellone>
+  <cartellone>
+    <fileHTML>dentista.html</fileHTML>
+    <durata>22</durata>
+  </cartellone>
+  <cartellone>
+    <fileHTML>cartoni.html</fileHTML>
+    <durata>9</durata>
+  </cartellone>
+</palinsesto>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Definizione del tipo di dati per il nome del file HTML -->
+    <xs:simpleType name="htmlFileName">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]+\.[h][t][m][l]"/> <!-- Pattern per i nomi dei file HTML -->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Definizione del tipo di dati per la durata -->
+    <xs:simpleType name="durationType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/> <!-- La durata deve essere un numero intero positivo -->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Definizione del tipo di dati per un singolo cartellone dell'XML -->
+    <xs:complexType name="itemType">
+        <xs:sequence>
+            <xs:element name="fileHTML" type="htmlFileName"/>
+            <xs:element name="durata" type="durationType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definizione del tipo di dati per l'elenco di elementi -->
+    <xs:element name="palinsesto">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cartellone" type="itemType" minOccurs="0" maxOccurs="unbounded"/> <!-- Elemento "cartellone" può comparire 0 o più volte -->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

@@ -1,0 +1,43 @@
+.container {
+    border: 6px solid red;
+    height: 100%;
+}
+
+.white-section {
+    background-color: white;
+    padding: 6px;
+    height: 100%;
+}
+
+.green-section {
+    background-image: url('../images/Sfondo.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 6px solid green;
+    padding: 6px;
+    max-width: fit-content;
+    height: 100%;
+    display: flex;
+}
+
+.col {
+    width: 33%;
+}
+
+.img-vert {
+    transform: rotate(90deg);
+    position: relative;
+    right: 240px;
+    bottom: 48px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    align-items: end;
+}
+
+h1 {
+    font-size: 124px;
+}

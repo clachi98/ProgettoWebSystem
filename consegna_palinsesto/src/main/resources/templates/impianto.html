@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palinsesto Cartelloni LED 1</title>
+    <script src="https://kit.fontawesome.com/c6cbeb848d.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+        }
+        .string {
+            position: relative;
+            font-family: "Arial Nova";
+            font-size: 19px;
+            font-weight: bold;
+            color: navy;
+            margin-left: 13%;
+        }
+    </style>
+</head>
+<body>
+<div id="box" style="position: relative; margin: 0; width: 100%; height: 93%"></div>
+
+<div style="position: relative; margin: 0; width: 100%; height: 7%; background-color: #73EB8E">
+    <p class="string" id="data" style="float: left"></p>
+    <p class="string" id="ora" style="float: left"></p>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <div class="elfsight-app-e624597d-21a6-4662-86bf-8bd80ff17b68" style="float: left; margin-left: 13%" data-elfsight-app-lazy></div>
+    <p class="string" style="float: right; margin-right: 7%"><i class="fa-solid fa-location-dot"></i> Piazza Castelnuovo - Politeama</p>
+</div>
+
+<!-- Definisci idImpianto prima di caricare script.js -->
+<script th:inline="javascript">
+    var idImpianto = [[${idImpianto}]]; // Thymeleaf sintassi per inserire il valore
+</script>
+<script src="/js/script.js"></script> <!-- Percorso corretto per il file JavaScript -->
+</body>
+</html>

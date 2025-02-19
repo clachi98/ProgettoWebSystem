@@ -1,0 +1,4 @@
+<!ELEMENT palinsesto (cartellone+)>
+<!ELEMENT cartellone (fileHTML, durata)>
+<!ELEMENT fileHTML (#PCDATA)>
+<!ELEMENT  durata (#PCDATA)>

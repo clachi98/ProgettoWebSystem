@@ -1,0 +1,165 @@
+body{
+    position: absolute;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.box_a{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.box_b{
+    position: relative;
+    width: 100%;
+    height: 15%;
+    background-color: #00CBA9;
+    text-align: center;
+}
+
+.box_c{
+    position: relative;
+    width: 100%;
+    height: 75%;
+    border-top: 5px solid #191970;
+    border-bottom: 5px solid #191970;
+}
+
+.box_d{
+    top: 5%;
+    left: 15%;
+    position: relative;
+    width: 70%;
+    height: 90%;
+}
+
+.box_e{
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 50%;
+}
+
+.box_f{
+    position: relative;
+    float: right;
+    height: 100%;
+    width: 50%;
+}
+
+.imgs{
+    position: absolute;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.txt_doc1{
+    position: absolute;
+    font-family: Georgia, serif;
+    font-size: 80px;
+    color: #191970;
+}
+
+.box_g{
+    width: 100%;
+    height: 8.9%;
+    background-color: #00CBA9;
+    display: inline-block;
+}
+
+.st1{
+    margin: 0;
+    position: relative;
+    font-family: Georgia, serif;
+    font-size: 75px;
+    top: 20%;
+    color: #191970;
+}
+
+.txts{
+    position: absolute;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 40px;
+    color: #191970;
+    margin-top: 65%;
+    text-align: center;
+}
+
+.st2{
+    margin: 1% 0 0 0;
+    position: relative;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: #191970;
+    text-align: center;
+}
+
+.fadeoutin{
+    animation: fadeOut 5s linear forwards,
+               fadeIn 5s linear 14.5s forwards;
+}
+
+.fadeout{
+    animation: fadeOut 5s linear forwards;
+}
+
+.fadein{
+    animation: fadeIn 5s linear forwards;
+    animation-delay: 14.5s;
+}
+
+.fadeinout{
+    opacity: 0;
+    animation: fadeInOut 5s linear forwards;
+}
+
+.delay1{
+    animation-delay: 4.5s;
+}
+
+.delay2{
+    animation-delay: 9.5s;
+}
+
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

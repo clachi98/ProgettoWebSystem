@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+.container {
+    width: 56%; /* Ampiezza del 56% */
+    position: absolute; /* Imposta il posizionamento assoluto */
+    right: 5%; /* Allinea il container a destra */
+    height: 100vh; /* Altezza  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dragonImage {
+    width: 34%; /* Ampiezza del 25% */
+    position: relative; /* Imposta il posizionamento relativo */
+    left: 5%; /* Allinea il container a sinistra */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.advert {
+    text-align: center;
+}
+
+.rolling-dice {
+    animation: roll-in ease-out 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    width: 150px;
+    height: calc(1.148 * 150px);
+    margin-top: 20px;
+}
+
+@keyframes roll-in {
+    0% {
+        transform: translateX(-150%) rotate(-120deg);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px) rotate(0deg);
+    }
+}
+
+.logo{
+    width: 50%;
+    height: calc(0.27 * 0.448 * 56vw); /*    56vw equivale alla grandezza del container
+                                            0.448 è la ratio lung/alt dell'immagine
+                                            0.5 potrebbe aiutare a mantenere le dimensioni della ratio adattandola alla dimensione
+                                      */
+}
+
+.dragon {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    left: 100px;
+    z-index: 0;
+}
+
+.fire{
+    animation: fade-in-left 2s ease;
+    position: relative;
+    width: 300px;
+    height: calc(0.58 * 300px);
+    left: -25px;
+    top: 75px;
+    rotate: 40deg;
+    z-index: 1;
+}
+
+@keyframes fade-in-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+h1 {
+    color: #f0f0f0;
+}
+
+p {
+    color: #666;
+    font-size: 20px;
+}

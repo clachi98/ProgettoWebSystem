@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Impianti</title>
+    <link rel="stylesheet" href="/css/stylesImpianti.css">
+</head>
+<body>
+<div class="container">
+    <h1>Gestione Impianti</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Identificativo Impianto</th>
+            <th>Palinsesto</th>
+            <th>Stato</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="impianto : ${impianti}">
+            <td th:text="${impianto.id}">1</td>
+            <td>
+                <select th:id="'palinsesto-' + ${impianto.id}" th:name="'palinsesto-' + ${impianto.id}">
+                    <option th:each="palinsesto : ${palinsesti}"
+                            th:value="${palinsesto.id}"
+                            th:text="${palinsesto.nome}"
+                            th:selected="${palinsesto.id} == ${impianto.palinsesto.id}">Palinsesto 1</option>
+                </select>
+            </td>
+            <td th:text="${impianto.stato} ? 'Attivo' : 'Inattivo'">Attivo</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

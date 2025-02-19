@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("images/mountains.jpg"); /* Aggiunta dell'immagine di sfondo */
+    background-size: cover; /* Imposta la dimensione dell'immagine di sfondo per coprire l'intera area */
+    background-position: center; /* Centra l'immagine di sfondo */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 80vw;
+    margin: auto;
+}
+
+.importanza-column,
+.spada-column {
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.8); /* Aggiunta di trasparenza al background */
+    border-radius: 10px;
+    padding: 5vw;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.image-column {
+    opacity: 0;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    animation: fade-in linear 3s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.center-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-right: 10px;
+    z-index: 2;
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
