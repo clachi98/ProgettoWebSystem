@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mappa degli Impianti</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #map {
+            margin: 5% 5% 1% 5%;
+            height: 700px;
+            width: 90%;
+        }
+        #updateButton {
+            margin-top: 20px;
+            margin-left: 45%;
+        }
+    </style>
+</head>
+<body>
+<!-- div che contiene la mappa -->
+<div id="map"></div>
+<!-- bottone che aggiunge/aggiorna i segnalini colorati -->
+<button id="updateButton">Aggiorna Mappa</button>
+
+<script>
+    var map = L.map('map').setView([38.116709182804854, 13.354767535479171], 15);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    var circles = [];
+
+    function updateMap() {
+        $.ajax({
+            url: 'http://localhost:8000/jakartaEE_war/updateMap',
+            type: "POST",
+            contentType: "application/json",
+            success: function(data) {
+                console.log(data);
+
+                circles.forEach(circle => map.removeLayer(circle));
+                circles = [];
+
+                data.forEach(function draw(imp) {
+                    var color = imp.stato ? 'green' : 'red';
+                    var circle = L.circle([imp.latitudine, imp.longitudine], {
+                        color: color,
+                        fillColor: color,
+                        fillOpacity: 0.5,
+                        radius: 50
+                    }).addTo(map);
+                    circles.push(circle);
+                });
+            }
+        });
+    }
+
+    document.addEventListener("readystatechange", updateMap);
+    document.getElementById('updateButton').addEventListener('click', updateMap);
+</script>
+
+</body>
+</html>
